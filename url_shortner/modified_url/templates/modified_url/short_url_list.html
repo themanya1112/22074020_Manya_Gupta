@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener - URL List</title>
+</head>
+<body>
+    <h1>URL Shortener - URL List</h1>
+    <ul>
+        {% for url in urls %}
+            <li><a href="{{ url.long_url }}">{{ url.short_code }}</a> - {{ url.long_url }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'shorten_url' %}">
+        <button>Shorten more URLs</button>
+    </a>
+</body>
+</html>
